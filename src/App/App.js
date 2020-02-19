@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import PropTypes from 'prop-types';
-import Welcome from './WelcomeMessage';
+import Welcome from '../Settings';
 import {AppLayout, GlobalStyle} from './AppLayout'
 import AppBar from './AppBar'
 import AppProvider from './AppProvider'
