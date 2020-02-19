@@ -8,8 +8,10 @@ import styled, {createGlobalStyle} from 'styled-components'
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Do Hyeon', sans-serif;
-    color: white;
-    background: darkblue;
+    color: lightgray;
+    background: #171433;
+    font-size: 20px;
+
   }
 `
 

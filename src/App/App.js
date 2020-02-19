@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Welcome from './WelcomeMessage';
 import {AppLayout, GlobalStyle} from './AppLayout'
 import AppBar from './AppBar'
-
+import AppProvider from './AppProvider'
 
 
 function App() {
@@ -12,8 +12,10 @@ function App() {
     <>
       <GlobalStyle />
       <AppLayout>
-      <AppBar/>
-        <Welcome/>  
+        <AppProvider>
+          <AppBar/>
+          <Welcome/>
+        </AppProvider>
       </AppLayout>
     </>
     
