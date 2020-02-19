@@ -6,11 +6,23 @@ export default class AppProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 'settings',
-      setPage: this.setPage
+      page: 'dashboard',
+       ...this.saveSettings(),
+      setPage: this.setPage,
+     
     }
   }
 
+  saveSettings = () => {
+    let dashData = JSON.parse(localStorage.getItem('cryptoDash'));
+    if(!dashData) {
+      return {
+        page : 'settings',
+        firstVisit: true
+    }
+    }
+
+  }
   setPage = page => this.setState({
     page
   })

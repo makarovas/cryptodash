@@ -3,6 +3,6 @@ import React from 'react'
 
 // export default WelcomeMessage;
 
-export default function() {
+export default function Settings() {
   return <WelcomeMessage/>
 }
