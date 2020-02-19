@@ -23,15 +23,19 @@ const ControlButtonElem = styled.div`
 cursor: pointer;
   ${props => props.active && css`
   color: darkgray;
-  text-shadow: 0px 0px 5px #03ff03
+  text-shadow: 0px 0px 5px #03ff03;
+  transition: text-shadow 0.3s ease-in-out;
   ` };
 `
 
 function ControlButton ({name}) {
   return(
     <AppContext.Consumer>
-     { ({page})=> (
-        <ControlButtonElem active={page === name}>
+     { ({page, setPage})=> (
+        <ControlButtonElem 
+        active={page === name}
+        onClick={()=> setPage(name)}
+        >
           {toProperCase(name)}
       </ControlButtonElem>
       )}

@@ -3,8 +3,12 @@ import React, { Component, createContext } from 'react'
 export const AppContext = createContext();
 
 export default class AppProvider extends Component {
-  state = {
-    page: 'dashboard'
+  constructor(props) {
+    super(props);
+    this.state = {
+      page: 'settings',
+      setPage: this.setPage
+    }
   }
 
   setPage = page => this.setState({
