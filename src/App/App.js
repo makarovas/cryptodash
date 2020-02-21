@@ -5,8 +5,8 @@ import {AppLayout, GlobalStyle} from './AppLayout'
 import AppBar from './AppBar'
 import AppProvider from './AppProvider'
 
-
 function App() {
+  
   return (
     <>
       <GlobalStyle />

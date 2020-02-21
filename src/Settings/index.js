@@ -1,12 +1,15 @@
 import WelcomeMessage from './WelcomeMessage';
 import React from 'react'
 import ConfirmButton from './ConfirmButton';
-// export default WelcomeMessage;
+import Page from '../Shared/Page'
 
-export default function() {
+export default function Settings() {
+
   return (
-  <>
-    <WelcomeMessage/>
-    <ConfirmButton/>
-  </>)
+    <Page name='settings'>
+      <WelcomeMessage/>
+      <ConfirmButton/>
+    </Page>
+  )
 }
+
