@@ -13,11 +13,11 @@ export default class CoinGrid extends Component {
       <AppContext.Consumer>
         {({coinList})=> {
           return (
-          <CoinGridStyled >{Object.keys(coinList).map((coinKey, i)=>{
-            return (
-            <div key={i}>{coinKey}</div>
-            )
-          })}</CoinGridStyled>
+            <CoinGridStyled >{Object.keys(coinList).map((coinKey,i)=>{
+              return (
+                <div key={i}>{coinKey}</div>
+              )})}
+          </CoinGridStyled>
           )
           // coinList.map(()=> {
 

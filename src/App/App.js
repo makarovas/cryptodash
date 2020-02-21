@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Settings from '../Settings';
-import {AppLayout, GlobalStyle} from './AppLayout'
+import {AppStyle, GlobalStyle} from './AppStyle'
 import AppBar from './AppBar'
 import AppProvider from './AppProvider'
 import Content from '../Shared/Content';
@@ -10,14 +10,14 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <AppLayout>
+      <AppStyle>
         <AppProvider>
           <AppBar/>
           <Content>
             <Settings/>
           </Content>
         </AppProvider>
-      </AppLayout>
+      </AppStyle>
     </>
   );
 }
