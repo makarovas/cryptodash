@@ -10,7 +10,7 @@ export default class AppProvider extends Component {
        ...this.saveSettings(),
       setPage: this.setPage,
       confirmFavorites: this.confirmFavorites ,
-      coinList: {},
+      coinList: null,
     }
   }
 
