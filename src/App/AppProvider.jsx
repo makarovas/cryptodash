@@ -9,8 +9,18 @@ export default class AppProvider extends Component {
       page: 'dashboard',
        ...this.saveSettings(),
       setPage: this.setPage,
-     
+      confirmFavorites: this.confirmFavorites ,
     }
+  }
+
+  
+
+  confirmFavorites = () => {
+    this.setState({
+      firstVisit: false,
+      page: 'dashboard',
+    })
+    localStorage.setItem('cryptoDash', JSON.stringify({key: 'hello'}))
   }
 
   saveSettings = () => {
@@ -19,7 +29,7 @@ export default class AppProvider extends Component {
       return {
         page : 'settings',
         firstVisit: true
-    }
+      }
     }
 
   }
