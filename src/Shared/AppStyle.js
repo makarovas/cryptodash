@@ -48,8 +48,17 @@ export const CoinGridStyled  = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px;
- 
 `
+
+export const CoinHeaderGridStyled  = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1fr, 1fr);
+`
+
+export const CoinSymbol  = styled.div`
+  justify-self: right
+`
+
 
 
 export {AppStyle, GlobalStyle};
