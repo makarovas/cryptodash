@@ -9,9 +9,9 @@ export default function () {
 
   return (
     <Page name='settings'>
+      <ConfirmButton/>
       <CoinGrid/> 
       <WelcomeMessage/>
-      <ConfirmButton/>
     </Page>
   )
 }

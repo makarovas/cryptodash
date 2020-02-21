@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Settings from '../Settings';
-import {AppStyle, GlobalStyle} from './AppStyle'
+import {AppStyle, GlobalStyle} from '../Shared/AppStyle'
 import AppBar from './AppBar'
 import AppProvider from './AppProvider'
 import Content from '../Shared/Content';
