@@ -52,7 +52,7 @@ export const CoinGridStyled  = styled.div`
 
 export const CoinHeaderGridStyled  = styled.div`
   display: grid;
-  grid-template-columns: repeat(1fr, 1fr);
+  grid-template-columns: repeat(2,  1fr);
 `
 
 export const CoinSymbol  = styled.div`

@@ -1,6 +1,7 @@
 import React from 'react'
 import {AppContext} from '../App/AppProvider';
 import {SelectableTile} from '../Shared/Tile'
+import CoinHeader from './CoinHeader'
 
 export default function({coinKey}) {
   return (
@@ -10,8 +11,11 @@ export default function({coinKey}) {
           const TileClass = SelectableTile;
           return (
               <TileClass> 
-                {coin.Symbol} - 
-                {coin.CoinName}
+                <CoinHeader 
+                name={coin.CoinName}
+                symbol={coin.Symbol}  
+                />
+                {console.log(coinList)}
               </TileClass>
           )
         }}
