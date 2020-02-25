@@ -52,17 +52,22 @@ export default class AppProvider extends Component {
       firstVisit: false,
       page: "dashboard"
     });
-    localStorage.setItem("cryptoDash", JSON.stringify({ key: "hello" }));
+    localStorage.setItem(
+      "cryptoDash",
+      JSON.stringify({ favorites: this.state.favorites })
+    );
   };
 
   saveSettings = () => {
-    let dashData = JSON.parse(localStorage.getItem("cryptoDash"));
-    if (!dashData) {
+    let cryptoDashData = JSON.parse(localStorage.getItem("cryptoDash"));
+    if (!cryptoDashData) {
       return {
         page: "settings",
         firstVisit: true
       };
     }
+    let { favorites } = cryptoDashData;
+    return { favorites };
   };
 
   setPage = page =>
