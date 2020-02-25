@@ -8,7 +8,20 @@ export default function CoinHeader({ name, symbol, topSection }) {
     <CoinHeaderGridStyled>
       <div>{name}</div>
       {topSection ? (
-        <DeletableTile>x</DeletableTile>
+        <DeletableTile
+          style={{
+            boxShadow: "none",
+            border: "none",
+            justifySelf: "right",
+            // display: "none",
+            "&:hover": {
+              display: "block",
+              color: "red"
+            }
+          }}
+        >
+          x
+        </DeletableTile>
       ) : (
         <CoinSymbol>{symbol}</CoinSymbol>
       )}

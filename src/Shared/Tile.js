@@ -37,8 +37,10 @@ export const DisabledTile = styled(Tile)`
 export const DeleteIcon = styled.div`
   justify-self: right;
   display: none;
-  ${DeletableTile}:hover & {
+  ${DeletableTile}&:hover & {
     display: block;
     color: red;
+    box-shadow: none;
+    border: none;
   }
 `;
