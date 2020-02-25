@@ -64,4 +64,19 @@ export const CoinSymbol = styled.div`
   justify-self: right;
 `;
 
+export const SearchGrid = styled.div`
+  display: grid;
+  grid-template-columns: 200px 1fr;
+`;
+
+export const SearchInput = styled.input`
+  ${backgroundColor2};
+  color: #fff;
+  ${fontSize2};
+  height: 35px;
+  border: 1px solid blue;
+  place-self: center left;
+  margin-left: 30px;
+`;
+
 export { AppStyle, GlobalStyle };
