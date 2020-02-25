@@ -15,6 +15,7 @@ export default class AppProvider extends Component {
       addCoin: this.addCoin,
       setPage: this.setPage,
       removeCoin: this.removeCoin,
+      isInFavorites: this.isInFavorites,
       confirmFavorites: this.confirmFavorites,
       coinList: null
     };
@@ -43,6 +44,8 @@ export default class AppProvider extends Component {
       coinList
     });
   };
+
+  isInFavorites = key => _.includes(this.state.favorites, key);
 
   confirmFavorites = () => {
     this.setState({

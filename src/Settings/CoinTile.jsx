@@ -17,11 +17,13 @@ const clickCoinHandler = (topSection, coinKey, addCoin, removeCoin) => {
 export default function CoinTile({ coinKey, topSection }) {
   return (
     <AppContext.Consumer>
-      {({ coinList, addCoin, removeCoin }) => {
+      {({ coinList, addCoin, removeCoin, isInFavorites }) => {
         let coin = coinList[coinKey];
         let TileClass = SelectableTile;
         if (topSection) {
           TileClass = DeletableTile;
+        } else if (isInFavorites(coinKey)) {
+          TileClass = DisabledTile;
         }
         return (
           <TileClass
