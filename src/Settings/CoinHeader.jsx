@@ -1,11 +1,17 @@
 import React from "react";
 import { CoinHeaderGridStyled, CoinSymbol } from "../Shared/AppStyle";
 
-export default function CoinHeader({ name, symbol }) {
+import { DeletableTile } from "../Shared/Tile";
+
+export default function CoinHeader({ name, symbol, topSection }) {
   return (
     <CoinHeaderGridStyled>
       <div>{name}</div>
-      <CoinSymbol>{symbol}</CoinSymbol>
+      {topSection ? (
+        <DeletableTile>x</DeletableTile>
+      ) : (
+        <CoinSymbol>{symbol}</CoinSymbol>
+      )}
     </CoinHeaderGridStyled>
   );
 }
