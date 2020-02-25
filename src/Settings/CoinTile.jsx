@@ -5,7 +5,7 @@ import CoinHeader from "./CoinHeader";
 
 import CoinImage from "../Shared/CoinImage";
 
-export default function CoinTile({ coinKey }) {
+export default function CoinTile({ coinKey, topSection }) {
   return (
     <AppContext.Consumer>
       {({ coinList }) => {
