@@ -1,5 +1,7 @@
 import React, { Component, createContext } from "react";
 import cc from "../cryptoCompareApi/CryptoCompare";
+import _ from "lodash";
+
 export const AppContext = createContext();
 
 const MAX_FAVORITES = 10;
@@ -12,6 +14,7 @@ export default class AppProvider extends Component {
       ...this.saveSettings(),
       addCoin: this.addCoin,
       setPage: this.setPage,
+      removeCoin: this.removeCoin,
       confirmFavorites: this.confirmFavorites,
       coinList: null
     };
@@ -27,6 +30,11 @@ export default class AppProvider extends Component {
       favorites.push(key);
       this.setState({ favorites });
     }
+  };
+
+  removeCoin = key => {
+    let favorites = [...this.state.favorites];
+    this.setState({ favorites: _.pull(favorites, key) });
   };
 
   fetchCoins = async () => {
