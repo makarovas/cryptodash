@@ -9,7 +9,7 @@ export default function PriceGrid() {
       {({ prices }) => (
         <PriceGridItem>
           {prices.map((price, index) => (
-            <PriceTile price={price} key={index} />
+            <PriceTile price={price} key={index} index={index} />
           ))}
         </PriceGridItem>
       )}
