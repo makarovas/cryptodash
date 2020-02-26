@@ -4,7 +4,7 @@ import { AppContext } from "../App/AppProvider";
 import _ from "lodash";
 import fuzzy from "fuzzy";
 
-const handlerDebounce = _.debounce((inputValue, coinList, setFilterCoins) => {
+const handlerFilter = _.debounce((inputValue, coinList, setFilterCoins) => {
   let coinSymbols = Object.keys(coinList);
   let coinNames = coinSymbols.map(sym => coinList[sym].CoinName);
   let allDataToSearch = [...coinNames, ...coinSymbols];
@@ -21,14 +21,14 @@ const handlerDebounce = _.debounce((inputValue, coinList, setFilterCoins) => {
   setFilterCoins(filteredCoins);
 }, 500);
 
-const filterCoins = (event, setFilteredCoins, coinList) => {
-  let inputValue = event.target.value;
+function filterCoins(e, setFilteredCoins, coinList) {
+  let inputValue = e.target.value;
   if (!inputValue) {
     setFilteredCoins(null);
     return;
   }
-  handlerDebounce(inputValue, coinList, setFilteredCoins);
-};
+  handlerFilter(inputValue, coinList, setFilteredCoins);
+}
 export default function Search() {
   return (
     <AppContext.Consumer>

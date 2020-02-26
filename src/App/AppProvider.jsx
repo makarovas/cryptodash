@@ -76,7 +76,7 @@ export default class AppProvider extends Component {
       page
     });
 
-  setFilteredCoins = filterCoins => this.setState({ filterCoins });
+  setFilteredCoins = filteredCoins => this.setState({ filteredCoins });
 
   render() {
     return (
