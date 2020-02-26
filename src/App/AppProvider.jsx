@@ -17,6 +17,7 @@ export default class AppProvider extends Component {
       removeCoin: this.removeCoin,
       isInFavorites: this.isInFavorites,
       confirmFavorites: this.confirmFavorites,
+      setFilteredCoins: this.setFilteredCoins,
       coinList: null
     };
   }
@@ -74,6 +75,8 @@ export default class AppProvider extends Component {
     this.setState({
       page
     });
+
+  setFilteredCoins = filterCoins => this.setState({ filterCoins });
 
   render() {
     return (
