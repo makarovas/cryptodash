@@ -2,18 +2,29 @@ import React from "react";
 import { SearchGrid, SearchInput } from "../Shared/AppStyle";
 import { AppContext } from "../App/AppProvider";
 import _ from "lodash";
+import fuzzy from "fuzzy";
 
 const handlerDebounce = _.debounce((inputValue, coinList, setFilteredCoins) => {
   let coinSymbols = Object.keys(coinList);
   let coinNames = coinSymbols.map(sym => coinList[sym].CoinName);
-  let allStringsToSearch = [...coinNames, ...coinSymbols];
-
-  console.log(allStringsToSearch);
+  // let allDataToSearch = [...coinNames, ...coinSymbols];
+  let allDataToSearch = coinSymbols.concat(coinNames);
+  let fuzzyResults = fuzzy
+    .filter(inputValue, allDataToSearch, {})
+    .map(x => x.string);
+  let filteredCoins = _.pickBy(coinList, (result, symKey) => {
+    let coinName = result.CoinName;
+    return (
+      _.includes(fuzzyResults, symKey) || _.includes(fuzzyResults, coinName)
+    );
+  });
+  console.log(filteredCoins);
+  setFilteredCoins(filteredCoins);
 }, 500);
 
 const filterCoins = (event, setFilteredCoins, coinList) => {
   let inputValue = event.target.value;
-  handlerDebounce(inputValue, coinList);
+  handlerDebounce(inputValue, coinList, setFilteredCoins);
 };
 export default function Search() {
   return (
