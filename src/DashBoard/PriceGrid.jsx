@@ -8,8 +8,8 @@ export default function PriceGrid() {
     <AppContext.Consumer>
       {({ prices }) => (
         <PriceGridItem>
-          {prices.map((price, i) => (
-            <li key={i}>price</li>
+          {prices.map((price, index) => (
+            <PriceTile price={price} key={index} />
           ))}
         </PriceGridItem>
       )}

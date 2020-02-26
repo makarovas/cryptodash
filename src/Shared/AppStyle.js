@@ -81,7 +81,7 @@ export const SearchInput = styled.input`
 
 export const PriceGrid = styled.ul`
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 15px;
 `;
 
