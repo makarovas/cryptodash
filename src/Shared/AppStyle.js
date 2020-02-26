@@ -79,7 +79,13 @@ export const SearchInput = styled.input`
   margin-left: 30px;
 `;
 
-export const PriceGrid = styled.div`
+export const PriceGrid = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 15px;
+`;
+
+export const PriceTileStyle = styled.div`
   display: grid;
 `;
 

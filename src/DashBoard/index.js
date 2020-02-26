@@ -5,6 +5,7 @@ import PriceGrid from "./PriceGrid";
 export default function Dashboard() {
   return (
     <Page name="dashboard">
+      {/* <div>page</div> */}
       <PriceGrid />
     </Page>
   );
