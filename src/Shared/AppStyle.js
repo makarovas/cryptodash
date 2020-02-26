@@ -79,4 +79,8 @@ export const SearchInput = styled.input`
   margin-left: 30px;
 `;
 
+export const PriceGrid = styled.div`
+  display: grid;
+`;
+
 export { AppStyle, GlobalStyle };

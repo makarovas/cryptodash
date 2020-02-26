@@ -60,10 +60,7 @@ export default class AppProvider extends Component {
     for (let i = 0; i < this.state.favorites.length; i++) {
       try {
         let pricesData = await cc.priceFull(this.state.favorites[i], "USD");
-        // returnData = [...pricesData, ...returnData];
-        debugger
         returnData.push(pricesData);
-
       } catch (e) {
         console.log(e);
       }

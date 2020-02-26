@@ -5,6 +5,8 @@ import { AppStyle, GlobalStyle } from "../Shared/AppStyle";
 import AppBar from "./AppBar";
 import AppProvider from "./AppProvider";
 import Content from "../Shared/Content";
+import Dashboard from "../DashBoard";
+
 function App() {
   return (
     <>
@@ -14,6 +16,7 @@ function App() {
           <AppBar />
           <Content>
             <Settings />
+            <Dashboard />
           </Content>
         </AppProvider>
       </AppStyle>
