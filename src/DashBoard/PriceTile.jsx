@@ -10,6 +10,7 @@ import {
   greenBoxShadow
 } from "../Shared/AppStyle";
 import styled, { css } from "styled-components";
+import { AppContext } from "../App/AppProvider";
 
 const SelectableTile = styled.div`
   ${subtleBoxShadow}
@@ -38,6 +39,12 @@ export const PriceTileStyled = styled(SelectableTile)`
     css`
       ${fontSize3}
     `}
+  ${props =>
+    props.currentFavorite &&
+    css`
+      ${greenBoxShadow}
+      pointer-events: none;
+    `}
 `;
 
 const TickerPrice = styled.div`
@@ -46,19 +53,22 @@ const TickerPrice = styled.div`
 
 export default function PriceTile({ price, index }) {
   let sym = Object.keys(price)[0];
-  debugger;
   let data = price[sym]?.USD;
   return (
-    <PriceTileStyled compact={index >= 5}>
-      <CoinHeaderGridStyled>
-        <div>{sym || "symbol not defined"}</div>
-        <CoinSymbol>
-          <ChangePct>
-            {changePrice(data?.OPENDAY, data?.PRICE) || "NA"}
-          </ChangePct>
-        </CoinSymbol>
-      </CoinHeaderGridStyled>
-      <TickerPrice>${numberFormat(data?.PRICE || "")}</TickerPrice>
-    </PriceTileStyled>
+    <AppContext.Consumer>
+      {({ currentFavorite }) => (
+        <PriceTileStyled compact={index >= 5} currentFavorite={currentFavorite}>
+          <CoinHeaderGridStyled>
+            <div>{sym || "symbol not defined"}</div>
+            <CoinSymbol>
+              <ChangePct>
+                {changePrice(data?.OPENDAY, data?.PRICE) || "NA"}
+              </ChangePct>
+            </CoinSymbol>
+          </CoinHeaderGridStyled>
+          <TickerPrice>${numberFormat(data?.PRICE || "")}</TickerPrice>
+        </PriceTileStyled>
+      )}
+    </AppContext.Consumer>
   );
 }
